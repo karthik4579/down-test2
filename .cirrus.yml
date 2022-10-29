@@ -1,0 +1,17 @@
+task:
+
+  name: Builds
+  timeout_in: 120m
+  container:
+    dockerfile: Dockerfile
+    cpu: 8
+    memory: 32G
+  
+  env:
+    CIRRUS_WORKING_DIR: "/tmp/ci"
+    TDRIVE: ENCRYPTED[6b344daad8e2aea9eac9e913d5633577868ceb33347d1e062ed94b688fd37b5e5d080f29b3f3c0120daee1182b0d9887]
+    TG_CHAT_ID: ENCRYPTED[5b2f40e16f9dd250eff3142b0dd63022780cee4907314149a4fd373628011e8eac5e5a3d2b348e76011b42a5475249b6]
+    TG_API_KEY: ENCRYPTED[6788ef7e38455f3d1ad106d98adddb05579c70df2fd176f84360d4bc8d95da07b1e2bb812a6c5a8532c4bb8866e3b4fe]
+
+  build_script:
+    - bash build.sh
