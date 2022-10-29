@@ -12,6 +12,6 @@ task:
     GIT_REPO: ENCRYPTED[92fd1e44c2124dccc648b7da55f14fd83e22600d57de4e1fc75ff21fd97bb0b2327ffb690138d02e6ed82e3e2d97af10]
 
   build_script:
-    - apt update && apt install sudo -y && sudo apt update && sudo apt upgrade -y && sudo apt install git zip unzip wget curl tar aria2c qbittorrent-nox python3 -y
+    - apt update && apt install sudo -y && sudo apt update && sudo apt upgrade -y && sudo apt install git zip unzip wget curl tar aria2 qbittorrent-nox python3 -y
     - git clone "$GIT_REPO" mirrorbot
-    - cd mirrorbot && bash start.sh
+    - cd mirrorbot && pip3 install --no-cache-dir -r requirements.txt && bash start.sh
